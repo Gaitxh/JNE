@@ -50,10 +50,6 @@ for feature_name in ["vit_visual_block_outputs_stack"]:
                     run_ANN_response = np.zeros_like(ANN_response[run_Fig_loc])
                     for layer_i in range(ANN_response.shape[1]):
                         run_ANN_response[:, layer_i, :] = scaler.fit_transform(ANN_response[run_Fig_loc, layer_i, :])
-                        aa = np.mean(run_ANN_response[:, layer_i, :], axis=0)
-                        bb = np.std(run_ANN_response[:, layer_i, :], axis=0)
-                        cc = run_ANN_response[:, layer_i, :]
-                        dd = ANN_response[run_Fig_loc, layer_i, :]
                 else:
                     run_ANN_response = ANN_response[run_Fig_loc]
 
@@ -77,9 +73,6 @@ for feature_name in ["vit_visual_block_outputs_stack"]:
             ANN_response_list.append(np.mean(Combine_ANN_response_list[fig_loc], axis=0))
 
         Combine_ANN_response_list = np.stack(ANN_response_list, axis=0)
-        ee = Combine_ANN_response_list[:, 0, :]
-        ee_sum = np.sum(ee, axis=1)
-        ee2 = Combine_ANN_response_list[:, 1, :]
         if standard_:
             save_dir = basic_dir + '/Stan_' + feature_name + '_Sub' + str(
                 sub_idx) + '.h5'
@@ -105,4 +98,5 @@ for feature_name in ["vit_visual_block_outputs_stack"]:
         position_set.append(np.concatenate(position_sub))
 
     result = (figure_unique_set, bingji_figure, position_set)
+
     np.save(basic_dir+'/Sub_info_uniqueFig.npy', position_set, allow_pickle=True)
