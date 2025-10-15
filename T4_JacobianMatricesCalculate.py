@@ -105,6 +105,7 @@ for sub_idx in sub_set:
                                         y_pred_grad = brain_map_model(X_test).requires_grad_(True)
                                     else:
                                         X_test = X_test.requires_grad_(True)
+                                        "请确定电脑中有足够的内存和存储空间，如果没有，可以仅仅计算显著激活体素的雅可比矩阵"
                                         y_pred_grad = brain_map_model(X_test).requires_grad_(True)
                                     Jacobian_mat_test = Jacobian_mat_cal(X_test, y_pred_grad).unsqueeze(0).to(device)
                                     torch.save(Jacobian_mat_test, Jacobian_save_model_dir)
@@ -115,4 +116,5 @@ for sub_idx in sub_set:
                                       f'{encoder_type}, '
                                       f'has wrong. '
                                       )
+
 
