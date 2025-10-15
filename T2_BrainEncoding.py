@@ -28,20 +28,14 @@ device = torch.device("cpu")
 project_dir = os.path.dirname(os.path.abspath(__file__))
 for sub_idx in sub_set:
     for layer_i in range(12, 0, -1):  # 注意，第一层是embedding的输出，后面是vit模块12层的输出
-        for run_i in [
-                      'clip_vit',
-                      # 'vit'
-                      ]:
+        for run_i in ['clip_vit']:
             for encoder_type in [
-                # 'res_linear',
-                'res_nonlinear_relu',
-                # 'res_nonlinear_gelu',
+                'res_linear',
+                'res_nonlinear_relu'
             ]:
                 for bias in [False]:
                     for hidden_size in [1024]:
                         try:
-                            "加载fmri信号,并实现按HCP-MMP功能性脑区进行划分，将20W个体素划分到180个脑区中"
-                            "注意，为了减少计算量，我们这里只关注视觉皮层的体素"
                             h5_file = h5py.File(project_dir + '/Dataset_fMRI/'
                                                               'Stan_fmri' + '_Sub' + str(sub_idx) + '.h5', "r")
                             fmri_data = h5_file["data"][:]
@@ -104,7 +98,7 @@ for sub_idx in sub_set:
                                       f'_MeanR{np.stack(results["val_r2_mean"]).max():.4f}'
                                       f'_{end_time - begin_time:.2f}s')
 
-                                "画图"
+                                "画图-损失函数"
                                 fig_dir = save_dir + (f'/{run_i}'
                                                       f'_S{sub_idx}_L{layer_i}'
                                                       f'_{encoder_type}.jpg')
@@ -126,4 +120,5 @@ for sub_idx in sub_set:
                                 f'_{encoder_type} '
                                   f'has something wrong. '
                                   )
+
 
