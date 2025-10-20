@@ -107,11 +107,6 @@ class encoder(nn.Module):
                                                      hidden_size=hidden_size,
                                                      dropout_rate=dropout_rate, activation='relu', layer_number=2,
                                                      bias=bias)
-        elif encoder_type == 'res_nonlinear_gelu':
-            self.encoder = residual_nonlinear_module(input_size=input_size, output_size=output_size,
-                                                     hidden_size=hidden_size,
-                                                     dropout_rate=dropout_rate, activation='gelu', layer_number=2,
-                                                     bias=bias)
     def forward(self, x):
         return self.encoder(x)
 
@@ -388,4 +383,5 @@ def plot_scatter_(A, B):
     ax.legend(fontsize=16, loc='upper left', frameon=False)
 
     plt.tight_layout()
+
     plt.show()
