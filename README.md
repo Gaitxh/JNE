@@ -1,6 +1,6 @@
 # Jacobian-Based Interpretation of Nonlinear Neural Encoding Model
 
-### Our paper has been accepted by NeurIPS2025 as Spotlight [https://arxiv.org/abs/2510.13688].
+Our paper has been accepted by NeurIPS2025 as **Spotlight** [https://arxiv.org/abs/2510.13688].
 
 ### Background and Motivation
 ![Figure1](https://github.com/user-attachments/assets/041b88f9-0e46-4733-9c8d-269679f1ce70)
