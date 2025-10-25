@@ -35,4 +35,4 @@ We introduce a new tool grounded in the concept of the Jacobian, which reflects 
 #### IV-Sample Selectivity of BOLD Response Nonlinearity
 ![Figure6](https://github.com/user-attachments/assets/7465b950-b75b-4263-b716-cd0ebb80bc27)
 
-#### If you have any other requirements, please contact gaitxh@foxmail.com and we will do our best to meet them. please 
+#### If you have any other requirements, please contact gaitxh@foxmail.com and we will do our best to meet them.
