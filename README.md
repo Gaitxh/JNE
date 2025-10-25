@@ -6,7 +6,8 @@ Our paper has been accepted by NeurIPS2025 as **Spotlight** [https://arxiv.org/a
 ![Figure1](https://github.com/user-attachments/assets/041b88f9-0e46-4733-9c8d-269679f1ce70)
 
 Recent advancements in neural encoding models have aligned artificial neural networks (ANNs) with functional magnetic resonance imaging (fMRI), enhancing research on neural representation and interpretability. While many studies show that neural responses are nonlinear, the quantitative characterization of this nonlinearity and its cortical distribution remains largely unknown. Simply comparing the performance of linear and nonlinear encoding models does not effectively capture the nonlinear characteristics of BOLD responses (Fig. b). To address this issue, we propose a new nonlinear assessment metric based on the Jacobian matrix (Fig. c).
-<img width="2084" height="1364" alt="image" src="https://github.com/user-attachments/assets/6bc3ac62-ac87-41ff-869b-403f16f53eb0" />
+![Figure2_2](https://github.com/user-attachments/assets/af1f024a-6552-4692-9400-5965662ef05c)
+
 
 ### Framework and Kernel Concept
 
